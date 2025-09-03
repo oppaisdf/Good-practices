@@ -22,6 +22,6 @@
     "sudo apt-get update -y && sudo apt-get upgrade -y && echo '🔥 Contenedor listo, papu 🔥'",
     "; New-Item -Path $PROFILE -ItemType File -Force",
     " && echo 'Set-PSReadLineOption -HistorySaveStyle SaveNothing' >> $PROFILE",
-    " && echo 'Set-PSReadLineOption -MaximumHistoryCount 5' >> $PROFILE",
+    " && echo 'Set-PSReadLineOption -MaximumHistoryCount 5' >> $PROFILE"
   ]
 }
