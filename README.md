@@ -49,7 +49,7 @@ docker run --rm `
 -v "$(pwd):/app" `
 -w /app `
 mcr.microsoft.com/dotnet/sdk:8.0 `
-bash -c 'dotnet tool install --global dotnet-ef --version 8.0.17 && export PATH="$PATH:/root/.dotnet/tools" && dotnet ef migrations add [MigrationName] && dotnet ef database update'
+bash -c 'dotnet tool install --global dotnet-ef --version 8.0.19 && export PATH="$PATH:/root/.dotnet/tools" && dotnet ef migrations add [MigrationName] -p ./API.Infrastructure -s ./API.API && dotnet ef database update -p ./API.Infrastructure ./API.API'
 ```
 
 ## 4. Arquitectura
@@ -82,7 +82,6 @@ bash -c 'dotnet tool install --global dotnet-ef --version 8.0.17 && export PATH=
 
 ## 5. ToDos
 
-- Migracianos de las entidades.
 - Agregar Identity para autentificación en la API.
 - Uso de Serilog.
 - Buenas prácticas en el desarrollo de una App con Angular y consumo de API.

@@ -17,6 +17,7 @@ RUN dotnet publish ./API.API/API.API.csproj -c Release -o /app /p:UseAppHost=fal
 FROM mcr.microsoft.com/dotnet/aspnet:${BASE_TAG} AS runtime
 WORKDIR /app
 COPY --from=build /app ./
+COPY ./API/API.API/Data/app.db ./Data/
 RUN adduser --disabled-password appuser && chown -R appuser:appuser /app
 USER appuser
 ENTRYPOINT ["dotnet", "API.API.dll"]
