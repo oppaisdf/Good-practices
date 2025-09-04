@@ -1,3 +1,4 @@
+using API.API.Endpoints;
 using API.Application.Services.Contracts;
 using API.Application.Services.Create;
 using API.Application.Services.Delete;
@@ -43,4 +44,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
+app.MapServicesEndpoints();
 app.Run();
